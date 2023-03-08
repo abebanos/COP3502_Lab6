@@ -1,4 +1,5 @@
 #Abraham Banos Lombardero Encode Function
+#This is me making changes to my program as outlined in the rubric ;-;
 
 while True:
   #Creation of the program's menu
@@ -19,6 +20,7 @@ while True:
     def encoder(password):
       encodedPassword = ''
 
+    #For loop using python's keyword digit which every character in a string is a digit to itterate through the string and finding the previous character at that index changing it and appending it to the new string.
       for digit in password:
         new_digit = str((int(digit) + 3) % 10)
         encodedPassword += new_digit
