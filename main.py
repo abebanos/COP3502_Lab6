@@ -2,7 +2,6 @@
 #This is me making changes to my program as outlined in the rubric ;-;
 
 #Initialization of variables
-password = ''
 
 #Function Definitions
 def decoder(password):
@@ -36,14 +35,12 @@ def main():
     #If-elif tree to determine user choice and then call the appropriate function
     if choice == '1' or choice == 'Encode':
       password = input('\nPlease enter your password to encode: ')
-      encoder(password)
+      password = encoder(password)
       print('Your password has been encoded and stored!')
 
     elif choice == '2' or choice == 'Decode':
-      if len(password) >= 1:
+        print(password)
         print(f"The encoded password is {password}, and the original password is {decoder(password)}.")
-      else:
-        print('\nNo password has been encoded yet. Please select option 1 to encode a password.')
 
     elif choice == '3' or choice == 'Quit':
       break
