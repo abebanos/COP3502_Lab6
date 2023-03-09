@@ -5,6 +5,12 @@
 password = ''
 
 #Function Definitions
+def decoder(password):
+  decoded_password = ''
+  for digit in password:
+    new_digit = str((int(digit) + (10-3)) % 10)
+    decoded_password += new_digit
+  return decoded_password
 
 def encoder(password):
   encodedPassword = ''
@@ -15,7 +21,7 @@ def encoder(password):
     new_digit = str((int(digit) + 3) % 10)
     encodedPassword += new_digit
   return encodedPassword
-    
+
 def main():
   while True:
     #Creation of the program's menu
@@ -26,7 +32,7 @@ def main():
     print('3. Quit')
     #Prompting and storing user input for menu selection
     choice = input('Please enter an option: ')
-      
+
     #If-elif tree to determine user choice and then call the appropriate function
     if choice == '1' or choice == 'Encode':
       password = input('\nPlease enter your password to encode: ')
@@ -35,7 +41,7 @@ def main():
 
     elif choice == '2' or choice == 'Decode':
       if len(password) >= 1:
-        password
+        print(f"The encoded password is {password}, and the original password is {decoder(password)}.")
       else:
         print('\nNo password has been encoded yet. Please select option 1 to encode a password.')
 
